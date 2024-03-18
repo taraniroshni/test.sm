@@ -1,5 +1,8 @@
+require('dotenv').config();
+
 document.addEventListener("DOMContentLoaded", function() {
-    const apiKey = 'YOUR_API_KEY';
+    const apiKey = process.env.API_KEY;
+
     const nasdaqUrl = `https://cloud.iexapis.com/stable/stock/market/list/mostactive?listLimit=10&token=${apiKey}`;
     const stockList = document.getElementById('stock-list');
     const searchInput = document.getElementById('search-input');
